@@ -7,5 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "vwxyutarooo",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "grpc-tools": "^1.10.0",
+    "grpc_tools_node_protoc_ts": "^5.0.1"
+  },
+  "dependencies": {
+    "google-protobuf": "^3.14.0"
+  }
 }
