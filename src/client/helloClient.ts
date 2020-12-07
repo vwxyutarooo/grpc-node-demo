@@ -5,18 +5,22 @@ import { grpcClientOptions, port } from "../config";
 
 const serverURL = `localhost:${port}`;
 
-export function sayHello() {
+export type RequestParams = {
+  name?: string;
+};
+
+export function sayHello({ name = "World" }: RequestParams) {
   const Request = new HelloRequest();
   const Client = new GreeterClient(
     serverURL,
     grpc.credentials.createInsecure(),
     grpcClientOptions
   );
-  Request.setName("Mercari");
+  Request.setName(name);
 
   return new Promise((resolve, reject) => {
     Client.sayHello(Request, (error, response) => {
-      if (error || response) {
+      if (error) {
         console.error(error);
         reject({
           code: error?.code || 500,
