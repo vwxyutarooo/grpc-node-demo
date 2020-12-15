@@ -16,7 +16,7 @@
 // limitations under the License.
 //
 'use strict';
-var grpc = require('grpc');
+var grpc = require('@grpc/grpc-js');
 var proto_helloworld_pb = require('../proto/helloworld_pb.js');
 
 function serialize_helloworld_FoobarReply(arg) {

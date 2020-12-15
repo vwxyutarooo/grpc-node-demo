@@ -1,6 +1,6 @@
 import { HelloRequest } from "../../gen/proto/helloworld_pb";
 import { GreeterClient } from "../../gen/proto/helloworld_grpc_pb";
-import grpc from "grpc";
+import { credentials } from "@grpc/grpc-js";
 import { grpcClientOptions, port } from "../config";
 
 const serverURL = `localhost:${port}`;
@@ -13,7 +13,7 @@ export function sayHello({ name = "World" }: RequestParams) {
   const Request = new HelloRequest();
   const Client = new GreeterClient(
     serverURL,
-    grpc.credentials.createInsecure(),
+    credentials.createInsecure(),
     grpcClientOptions
   );
   Request.setName(name);
