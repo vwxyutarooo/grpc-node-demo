@@ -11,5 +11,3 @@ protogen:
 	rm -rf $(OUTPUT) && mkdir -p $(OUTPUT)
 	# generate js codes via grpc-tools 
 	$(COMMAND)
-	# generate d.ts codes via protoc
-	$(PROTOC_COMMAND)
