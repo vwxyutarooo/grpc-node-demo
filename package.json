@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "^14.5.0",
+    "npm": "^6.14.5"
+  },
   "scripts": {
     "dev": "npm run dev:server & npm run dev:bff",
     "dev:server": "nodemon src/server/index.ts",
